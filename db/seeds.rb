@@ -1,4 +1,6 @@
  require 'faker'
+
+Post.find_or_create_by(title: "Unique Post", body: "unique post body")
  
  # Create Posts
  50.times do
