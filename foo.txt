@@ -1,0 +1,85 @@
+-- create_table("advertisements", {:force=>:cascade})
+   -> 0.0375s
+-- create_table("comments", {:force=>:cascade})
+   -> 0.0165s
+-- add_index("comments", ["post_id"], {:name=>"index_comments_on_post_id"})
+   -> 0.0158s
+-- create_table("posts", {:force=>:cascade})
+   -> 0.0138s
+-- add_index("posts", ["user_id"], {:name=>"index_posts_on_user_id"})
+   -> 0.0147s
+-- create_table("users", {:force=>:cascade})
+   -> 0.0234s
+-- add_index("users", ["email"], {:name=>"index_users_on_email", :unique=>true})
+   -> 0.0137s
+-- add_index("users", ["reset_password_token"], {:name=>"index_users_on_reset_password_token", :unique=>true})
+   -> 0.0156s
+-- initialize_schema_migrations_table()
+   -> 0.0389s
+rake aborted!
+Net::SMTPAuthenticationError: 535 Authentication failed: Bad username / password
+/home/action/.gem/ruby/1.9.1/gems/mail-2.6.3/lib/mail/network/delivery_methods/smtp.rb:112:in `deliver!'
+/home/action/.gem/ruby/1.9.1/gems/mail-2.6.3/lib/mail/message.rb:2141:in `do_delivery'
+/home/action/.gem/ruby/1.9.1/gems/mail-2.6.3/lib/mail/message.rb:236:in `block in deliver'
+/home/action/.gem/ruby/1.9.1/gems/actionmailer-4.2.0/lib/action_mailer/base.rb:543:in `block in deliver_mail'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/notifications.rb:164:in `block in instrument'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/notifications.rb:164:in `instrument'
+/home/action/.gem/ruby/1.9.1/gems/actionmailer-4.2.0/lib/action_mailer/base.rb:541:in `deliver_mail'
+/home/action/.gem/ruby/1.9.1/gems/mail-2.6.3/lib/mail/message.rb:236:in `deliver'
+/home/action/.gem/ruby/1.9.1/gems/actionmailer-4.2.0/lib/action_mailer/message_delivery.rb:85:in `deliver_now'
+/home/action/.gem/ruby/1.9.1/gems/devise-3.4.1/lib/devise/models/authenticatable.rb:176:in `send_devise_notification'
+/home/action/.gem/ruby/1.9.1/gems/devise-3.4.1/lib/devise/models/confirmable.rb:102:in `send_confirmation_instructions'
+/home/action/.gem/ruby/1.9.1/gems/devise-3.4.1/lib/devise/models/confirmable.rb:109:in `send_reconfirmation_instructions'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:427:in `block in make_lambda'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:225:in `call'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:225:in `block in halting_and_conditional'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:219:in `call'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:219:in `block in halting_and_conditional'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:92:in `call'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:92:in `_run_callbacks'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:734:in `_run_update_callbacks'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/callbacks.rb:310:in `_update_record'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/timestamp.rb:70:in `_update_record'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/persistence.rb:501:in `create_or_update'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/callbacks.rb:302:in `block in create_or_update'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:117:in `call'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:117:in `call'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:169:in `block in halting'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:92:in `call'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:92:in `_run_callbacks'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/callbacks.rb:734:in `_run_save_callbacks'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/callbacks.rb:302:in `create_or_update'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/persistence.rb:142:in `save!'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/validations.rb:43:in `save!'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/attribute_methods/dirty.rb:29:in `save!'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:291:in `block in save!'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:347:in `block in with_transaction_returning_status'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/connection_adapters/abstract/database_statements.rb:211:in `transaction'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:220:in `transaction'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:344:in `with_transaction_returning_status'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:291:in `save!'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/persistence.rb:263:in `block in update!'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:347:in `block in with_transaction_returning_status'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `block in transaction'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/connection_adapters/abstract/transaction.rb:188:in `within_new_transaction'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/connection_adapters/abstract/database_statements.rb:213:in `transaction'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:220:in `transaction'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/transactions.rb:344:in `with_transaction_returning_status'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/persistence.rb:261:in `update!'
+/home/action/code/bloccit/db/seeds.rb:44:in `<top (required)>'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `load'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `block in load'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `load'
+/home/action/.gem/ruby/1.9.1/gems/railties-4.2.0/lib/rails/engine.rb:547:in `load_seed'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/tasks/database_tasks.rb:250:in `load_seed'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/railties/databases.rake:180:in `block (2 levels) in <top (required)>'
+/home/action/.gem/ruby/1.9.1/gems/activerecord-4.2.0/lib/active_record/railties/databases.rake:139:in `block (2 levels) in <top (required)>'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `load'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `block in load'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:240:in `load_dependency'
+/home/action/.gem/ruby/1.9.1/gems/activesupport-4.2.0/lib/active_support/dependencies.rb:268:in `load'
+-e:1:in `<main>'
+Tasks: TOP => db:setup => db:seed
+(See full trace by running task with --trace)
