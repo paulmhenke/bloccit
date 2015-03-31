@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
-    authorize @posts
+    
+    @posts = policy_scope(Post)
+    
   end
 
   def show
@@ -35,4 +36,5 @@ class PostsController < ApplicationController
     authorize @post
     if @post.update_attributes(params.require(:post).permit(:title, :body))
     end
+  end
 end
