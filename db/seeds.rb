@@ -57,7 +57,7 @@
    role:     'admin'
  )
  admin.skip_confirmation!
-admin.skip_reconfirmation!
+
  admin.save!
  
  # Create a moderator
@@ -68,7 +68,7 @@ admin.skip_reconfirmation!
    role:     'moderator'
  )
  moderator.skip_confirmation!
-moderator.skip_reconfirmation!
+
  moderator.save!
  
  # Create a member
@@ -78,7 +78,7 @@ moderator.skip_reconfirmation!
    password: 'helloworld'
  )
  member.skip_confirmation!
-member.skip_reconfirmation!
+
  member.save!
  
  puts "Seed finished"
