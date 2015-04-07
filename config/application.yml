@@ -1,7 +1,7 @@
 SENDGRID_PASSWORD: app34959290@heroku.com
 SENDGRID_USERNAME: aalklkdj
 
-SECRET_KEY_BASE:
+SECRET_KEY_BASE: e3f9218d44f06d6d81e47f5dce8016f5bdf51e571cae37ef631a2266510af6d45fdd8058d4003a484fda01acfb957531e053702b795d4304f3f495097473ef11
 
 # Add configuration values here, as shown below.
 #
