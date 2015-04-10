@@ -43,9 +43,26 @@ class PostsController < ApplicationController
     end
   end
   
+  def markdown_title
+    if 
+    
+  end
+  
+  def markdown_body
+   
+  end
+  
   private
   
   def post_params
     params.require(:post).permit(:title, :body)
   end
+  
+  def render_as_markdown
+     renderer = Redcarpet::Render::HTML.new
+     extensions = {fenced_code_blocks: true}
+     redcarpet = Redcarpet::Markdown.new(renderer, extensions)
+     (redcarpet.render markdown).html_safe
+  end
+    
 end
