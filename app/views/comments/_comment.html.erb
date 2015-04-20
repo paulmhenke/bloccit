@@ -1,0 +1,11 @@
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag comment.user.avatar.small, height:30, width:30 %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= comment.user.name %></h4>
+    <p><%= comment.body %></p>
+  </div>
+</div>

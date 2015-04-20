@@ -17,3 +17,11 @@
     <% end %>
   </div>
 </div>
+<div class="row">
+  <%= render partial: "comments/form", locals: { topic: @topic, post: @post, comment: @comment } %>
+</div>
+<div class="row">
+  <% @comments.each do |c| %>
+  <%= render partial: "comments/comment", locals: { comment: c } %>
+  <% end %>
+</div>
