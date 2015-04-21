@@ -18,7 +18,9 @@
   </div>
 </div>
 <div class="row">
+  <% if policy(@comment).create? %>
   <%= render partial: "comments/form", locals: { topic: @topic, post: @post, comment: @comment } %>
+  <% end %>
 </div>
 <div class="row">
   <% @comments.each do |c| %>

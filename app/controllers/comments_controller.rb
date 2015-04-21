@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def create
     # in the view, only render the form if policy(comment).create?
     # find the topic
@@ -6,8 +7,10 @@ class CommentsController < ApplicationController
     # post.comments.create
     # associate the comment with a user
     # save the comment, and redirect to the post
+    
     @post = Post.find(params[:post_id])
     @comment = current_user.comments.build(comment_params)
+    authorize @comment
       if @comment.save
         flash[:notice] = "Your comment was saved." 
         redirect_to [@post]
