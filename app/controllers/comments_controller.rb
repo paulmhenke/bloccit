@@ -1,12 +1,6 @@
 class CommentsController < ApplicationController
   
   def create
-    # in the view, only render the form if policy(comment).create?
-    # find the topic
-    # find the post
-    # post.comments.create
-    # associate the comment with a user
-    # save the comment, and redirect to the post
     @topic = Topic.find(params[:topic_id])
     @post = @topic.posts.find(params[:post_id])
     @comment = current_user.comments.build(comment_params)
@@ -19,6 +13,22 @@ class CommentsController < ApplicationController
         render :create
       end
   end
+  
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    
+    authorize @comment
+    if @comment.destroy
+      flash[:notice] = "Comment was removed."
+      redirect_to [@topic, @post]
+    else
+      flash[:danger] = "There was an error deleting Comment."
+      redirect_to [@topic, @post]
+    end
+  end
+      
 
   private
   
