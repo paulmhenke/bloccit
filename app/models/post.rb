@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   belongs_to :topic
   mount_uploader :image, ImageUploader
   
+  after_create :create_vote
+  
   def up_votes
     votes.where(value: 1).count
   end
@@ -22,8 +24,8 @@ class Post < ActiveRecord::Base
     new_rank = points + age_in_days
     update_attribute(:rank, new_rank)
   end
-  
-  default_scope { order('rank DESC')}
+    
+  default_scope { order('rank DESC') }
   
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
@@ -46,5 +48,9 @@ class Post < ActiveRecord::Base
      extensions = {fenced_code_blocks: true}
      redcarpet = Redcarpet::Markdown.new(renderer, extensions)
      (redcarpet.render markdown).html_safe
+  end
+  
+  def create_vote
+    user.votes.create(post: self, value: 1)
   end
 end
