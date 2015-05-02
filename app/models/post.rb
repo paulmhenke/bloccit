@@ -35,7 +35,7 @@ class Post < ActiveRecord::Base
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
   
-  validates :topic, presence:true
+  validates :topic, presence: true
   validates :user, presence: true
   
   def markdown_title
@@ -60,6 +60,4 @@ class Post < ActiveRecord::Base
      redcarpet = Redcarpet::Markdown.new(renderer, extensions)
      (redcarpet.render markdown).html_safe
   end
-  
-  
 end
