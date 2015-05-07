@@ -5,7 +5,7 @@ describe User do
   include TestFactories
   
   before do
-    @user = authenticated_user
+    @user = create(:user)
     @post = Post.create(title: "rspec post", body: "this is an rspec post for the purpose of testing", id: 1)
     @post_2 = Post.create(title: "second rspec post", body: "this is the second rspec post for testing", id: 2)
   end
@@ -29,9 +29,10 @@ describe User do
   describe ".top_rated" do
  
      before do
-       @user1 = create(:user)
-       post = create(:post, user: @user1)
-       create(:comment, user: @user1, post: post)
+       @user1 = create(:user_with_post_and_comment)
+       #create(:user)
+       #post = create(:post, user: @user1)
+       #create(:comment, user: @user1, post: post)
  
        @user2 = create(:user)
        post = create(:post, user: @user2)
