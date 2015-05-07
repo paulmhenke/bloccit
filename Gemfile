@@ -51,6 +51,7 @@ end
 group :development, :test do
   gem 'capybara'
   gem 'sqlite3'
+  gem 'factory_girl_rails', '~> 4.0'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
